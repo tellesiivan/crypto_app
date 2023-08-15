@@ -31,12 +31,11 @@ struct TopMoversItemView: View {
         // coin percent change
         Text(topMovingCoin.priceChangePercentage24H.toPercentString())
          .font(.title2)
-         .foregroundStyle(topMovingCoin.marketCapChangePercentage24H ?? 0  > 0 ? .green : .red)
+         .foregroundStyle(topMovingCoin.marketCapChangePercentage24H ?? 0  > 0 ? .green : Color(.decreasePrice))
        }
      .frame(width: 140, height: 140)
-     .overlay {
-      RoundedRectangle(cornerRadius: 10)
-       .stroke(Color(.systemGray4), lineWidth:2)
-     }
+     .background(Color(.itemBackground))
+     .clipShape(.rect(cornerRadius: 8))
+    
     }
 }
