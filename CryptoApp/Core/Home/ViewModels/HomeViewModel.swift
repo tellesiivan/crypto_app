@@ -41,7 +41,7 @@ class HomeViewModel: ObservableObject {
                self.coins = coins
                self.configureTopMovingCoins()
             }
-         } catch let error {
+         } catch _ {
             print("DEBUG: Error --> Failed to decode coins")
             
          }
