@@ -15,26 +15,27 @@ struct CoinDetailsView: View {
    }
    
    var body: some View {
-      NavigationStack{
-         ScrollView{
-            //             Chart
-            
-            
-            
-            
-            VStack(spacing:20) {
-               //             Overview
-               CoinDetailsSectionView(model: viewModel.overviewSectionModel)
-               
-               //             additional details
-               CoinDetailsSectionView(model: viewModel.additionDetailsSectionModel)
-            }
+      ScrollView(showsIndicators: false){
+         //             Chart
+         
+         ChartView(viewModel: viewModel)
+            .frame(height: 250)
             .padding(.vertical)
+
+         
+         
+         VStack(spacing:20) {
+            //             Overview
+            CoinDetailsSectionView(model: viewModel.overviewSectionModel)
             
+            //             additional details
+            CoinDetailsSectionView(model: viewModel.additionDetailsSectionModel)
          }
-         .padding(.horizontal)
-         .navigationTitle("Bitcoin")
+         .padding(.vertical)
+         
       }
+      .padding(.horizontal)
+      .navigationTitle(viewModel.coinTitle)
    }
 }
 
