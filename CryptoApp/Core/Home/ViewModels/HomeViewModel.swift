@@ -10,6 +10,7 @@ import SwiftUI
 class HomeViewModel: ObservableObject {
    @Published var coins = [CoinModel]()
    @Published var topMovingCoins = [CoinModel]()
+   @Published var isLoadingData = true
    
    init(){
       fetchCoinData()
@@ -22,6 +23,7 @@ class HomeViewModel: ObservableObject {
       URLSession.shared.dataTask(with: url) { data, response, error in
          if let error = error {
             print("DEBUG: Error --> \(error.localizedDescription)")
+            self.isLoadingData = false
             return
          }
          
@@ -40,9 +42,11 @@ class HomeViewModel: ObservableObject {
             DispatchQueue.main.async {
                self.coins = coins
                self.configureTopMovingCoins()
+               self.isLoadingData = false
             }
          } catch _ {
             print("DEBUG: Error --> Failed to decode coins")
+            self.isLoadingData = false
             
          }
          
