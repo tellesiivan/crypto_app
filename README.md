@@ -1,23 +1,24 @@
 CryptoTrack - First Swift Crypto App
 Crypto price tracking app for iOS built as my first foray into Swift development. Fetches latest pricing data and historical charts for top cryptocurrencies using CoinAPI. Allows creating watchlist of coins and viewing news related to each coin or the overall market.
 
-Features
-Browse top 100 cryptocurrencies by market cap
-Search for any coin by name or symbol
-Detailed price quotes, market cap, 24H change percentages
-Interactive historical price charts with toggleable timeframes
-Build and track personalized watchlist of selected coins
-Latest Bitcoin and crypto news feed integration
-Persistent storage of user watchlist and app data
-Built With
-Frontend
+## Features
+- Browse top 100 cryptocurrencies by market cap
+- Search for any coin by name or symbol
+- Detailed price quotes, market cap, 24H change percentages
+- Interactive historical price charts with toggleable timeframes
+- Build and track personalized watchlist of selected coins
+- Latest Bitcoin and crypto news feed integration
+- Persistent storage of user watchlist and app data
 
-Swift 5
-SwiftUI
-Core Data
-URLSession for Network calls
-CoinAPI SDK
-API
+---
+
+## Built With
+
+- Swift 5
+- SwiftUI
+- Core Data
+- URLSession for Network calls
+- CoinAPI SDKAPI
 
 CoinAPI for latest and historical OHLCV pricing data
 NewsAPI for curated crypto news RSS feed
